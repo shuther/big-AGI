@@ -3,6 +3,7 @@ import * as React from 'react';
 import type { DLLMId } from '~/modules/llms/store-llms';
 
 import { GlobalShortcutItem, useGlobalShortcuts } from '~/common/components/useGlobalShortcut';
+import { isMacUser } from '~/common/util/pwaUtils';
 
 
 const DEBUG_OPTIMA_LAYOUT_PLUGGING = false;
@@ -116,8 +117,8 @@ export function OptimaLayoutProvider(props: { children: React.ReactNode }) {
 
   // global shortcuts for Optima
   const shortcuts = React.useMemo((): GlobalShortcutItem[] => [
-    ['?', true, true, false, actions.openShortcuts],
-    ['m', true, true, false, allowAIModelSelection? actions.openModelsSetup: (() => void 0)],
+    [isMacUser ? '/' : '?', true, true, false, actions.openShortcuts],
+    ['m', true, true, false, actions.openModelsSetup],
     ['p', true, true, false, actions.openPreferencesTab],
   ], [actions]);
   useGlobalShortcuts(shortcuts);

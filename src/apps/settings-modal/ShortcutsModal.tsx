@@ -5,6 +5,7 @@ import { BlocksRenderer } from '~/modules/blocks/BlocksRenderer';
 import { GoodModal } from '~/common/components/GoodModal';
 import { platformAwareKeystrokes } from '~/common/components/KeyStroke';
 import { useIsMobile } from '~/common/components/useMatchMedia';
+import { isMacUser } from '~/common/util/pwaUtils';
 
 
 const shortcutsMd = platformAwareKeystrokes(`
@@ -19,12 +20,12 @@ const shortcutsMd = platformAwareKeystrokes(`
 | Ctrl + Shift + V    | Attach clipboard (better than Ctrl + V)         |
 | Ctrl + M            | Microphone (voice typing)                       |
 | **Chats**           |                                                 |
-| Ctrl + O            | Open Chat File ...                              |
-| Ctrl + S            | Save Chat File ...                              |
-| Ctrl + Alt + N      | **New** chat                                    |
-| Ctrl + Alt + X      | **Reset** chat                                  |
-| Ctrl + Alt + D      | **Delete** chat                                 |
-| Ctrl + Alt + B      | **Branch** chat                                 |
+| Ctrl + O            | Open Chat ...                                   |
+| Ctrl + S            | Save Chat ...                                   |
+| Ctrl + ${isMacUser ? '' : 'Alt +'} N      | **New** chat                                    |
+| Ctrl + ${isMacUser ? '' : 'Alt +'} X      | **Reset** chat                                  |
+| Ctrl + ${isMacUser ? '' : 'Alt +'} D      | **Delete** chat                                 |
+| Ctrl + ${isMacUser ? '' : 'Alt +'} B      | **Branch** chat                                 |
 | Ctrl + Alt + Left   | **Previous** chat (in history)                  |
 | Ctrl + Alt + Right  | **Next** chat (in history)                      |
 | **Settings**        |                                                 |
