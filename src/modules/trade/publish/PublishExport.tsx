@@ -21,7 +21,11 @@ import { conversationToMarkdown } from '../trade.client';
 function linkToOrigin() {
   let origin = isBrowser ? window.location.href : '';
   if (!origin || origin.includes('//localhost'))
-    origin = Brand.URIs.OpenRepo;
+    if (Brand.URIs.OpenRepo)
+      origin = Brand.URIs.OpenRepo!;
+    else
+      origin = Brand.URIs.Home;
+
   origin = origin.replace('https://', '');
   if (origin.endsWith('/'))
     origin = origin.slice(0, -1);

@@ -66,6 +66,7 @@ export function UxLabsSettings() {
         - Chat Mode: follow-ups; moved to Chat Advanced UI
     */}
 
+  {/*
     <FormControl orientation='horizontal' sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
       <FormLabelStart title='Graduated' description='Ex-labs' />
       <Typography level='body-xs'>
@@ -77,6 +78,7 @@ export function UxLabsSettings() {
         {' · '}Imagine · Chat Search · Text Tools · LLM Overheat
       </Typography>
     </FormControl>
+  */}
 
   </>;
 }

@@ -28,7 +28,8 @@ const OLLAMA_PATH_SHOW = '/api/show';
 
 export function ollamaAccess(access: OllamaAccessSchema, apiPath: string): { headers: HeadersInit, url: string } {
 
-  const ollamaHost = fixupHost(access.ollamaHost || env.OLLAMA_API_HOST || DEFAULT_OLLAMA_HOST, apiPath);
+  const ollamaHostT :string | undefined = access.ollamaHost || env.OLLAMA_API_HOST;
+  const ollamaHost : string = fixupHost( ollamaHostT ?? DEFAULT_OLLAMA_HOST , apiPath);
 
   return {
     headers: {

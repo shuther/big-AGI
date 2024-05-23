@@ -54,7 +54,7 @@ const useAppChatStore = create<AppChatStore>()(persist(
     autoSpeak: 'off',
     setAutoSpeak: (autoSpeak: ChatAutoSpeakType) => _set({ autoSpeak }),
 
-    autoSuggestDiagrams: false,
+    autoSuggestDiagrams: true,
     setAutoSuggestDiagrams: (autoSuggestDiagrams: boolean) => _set({ autoSuggestDiagrams }),
 
     autoSuggestQuestions: false,

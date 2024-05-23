@@ -32,14 +32,6 @@ export const newsRoadmapCallout =
         Discover upcoming features and let us know what excites you the most!
       </Typography>
       <Grid container spacing={1}>
-        <Grid xs={12} sm={7}>
-          <Button
-            fullWidth variant='soft' color='primary' endDecorator={<LaunchIcon />}
-            component={Link} href={Brand.URIs.OpenProject} noLinkStyle target='_blank'
-          >
-            Explore
-          </Button>
-        </Grid>
         <Grid xs={12} sm={5} sx={{ display: 'flex', flexAlign: 'center', justifyContent: 'center' }}>
           <Button
             fullWidth variant='plain' color='primary' endDecorator={<LaunchIcon />}

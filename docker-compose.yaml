@@ -6,9 +6,76 @@ version: '3.9'
 
 services:
   big-agi:
-    image: ghcr.io/enricoros/big-agi:latest
+#    image: ghcr.io/enricoros/big-agi:latest
+    build: .
+    image: big-agi
+
     ports:
-      - "3000:3000"
+      - "9223:3000"
     env_file:
       - .env
+      - pg.env
     command: [ "next", "start", "-p", "3000" ]
+#    environment:
+#      - PUPPETEER_WSS_ENDPOINT=ws://browserless:3000
+# dev or production
+# part of DockerFile, enforced as production
+#      - NODE_ENV=development
+    depends_on:
+      browserless:
+        condition: service_started
+      postgresl:
+        condition: service_healthy
+    restart: always
+    networks:
+      - my-net
+      - pg-net
+
+  browserless:
+    image: browserless/chrome:latest
+# no need to access psql password, would not be safe
+    env_file:
+      - browserless.env
+    restart: always
+    ports:
+      - "9222:3000"  # Map host's port 9222 to container's port 3000
+#    environment:
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 2048M
+
+    networks:
+      - my-net
+
+  postgresl:
+    image: postgres:16
+    container_name: pg
+    hostname: pg
+    restart: unless-stopped
+    # Uncomment the following line to enable query logging
+    # Then restart the container.
+    # command: ['postgres', '-c', 'log_statement=all']
+    env_file:
+      - pg.env
+
+#    ports:
+#      - '15432:5432'
+
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      # specifying user and database is needed to avoid `FATAL:  role "root" does not exist`
+      # spam in the logs
+      test: ['CMD', 'pg_isready', '-U', 'prisma', '-d', 'chatai']
+      interval: 5s
+      timeout: 2s
+      retries: 20
+    networks:
+      - pg-net
+
+networks:
+    my-net:
+    pg-net:

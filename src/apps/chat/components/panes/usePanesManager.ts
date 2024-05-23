@@ -8,13 +8,13 @@ import { DConversationId, useChatStore } from '~/common/state/store-chats';
 
 
 // change this to increase/decrease the number history steps per pane
-const MAX_HISTORY_LENGTH = 10;
+const MAX_HISTORY_LENGTH:string = process.env.MAX_HISTORY_LENGTH!;
 
 // change this to allow for more/less panes
-const MAX_CONCURRENT_PANES = 4;
+const MAX_CONCURRENT_PANES:number = Number(process.env.MAX_CONCURRENT_PANES!);
 
 // change to true to enable verbose console logging
-const DEBUG_PANES_MANAGER = false;
+const DEBUG_PANES_MANAGER:string = process.env.DEBUG_PANES_MANAGER!;
 
 
 interface ChatPane {

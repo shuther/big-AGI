@@ -99,7 +99,8 @@ export function OptimaLayoutProvider(props: { children: React.ReactNode }) {
     openPreferencesTab: (tab?: PreferencesTabType) => setState(state => ({ ...state, showPreferencesTab: tab || PreferencesTab.Chat })),
     closePreferences: () => setState(state => ({ ...state, showPreferencesTab: 0 })),
 
-    openModelsSetup: () => setState(state => ({ ...state, showModelsSetup: true })),
+    //Block
+    openModelsSetup: () => setState(state => ({ ...state, showModelsSetup: false })),
     closeModelsSetup: () => setState(state => ({ ...state, showModelsSetup: false })),
 
     openLlmOptions: (id: DLLMId) => setState(state => ({ ...state, showLlmOptions: id })),
@@ -116,7 +117,7 @@ export function OptimaLayoutProvider(props: { children: React.ReactNode }) {
   // global shortcuts for Optima
   const shortcuts = React.useMemo((): GlobalShortcutItem[] => [
     ['?', true, true, false, actions.openShortcuts],
-    ['m', true, true, false, actions.openModelsSetup],
+  //  ['m', true, true, false, actions.openModelsSetup],
     ['p', true, true, false, actions.openPreferencesTab],
   ], [actions]);
   useGlobalShortcuts(shortcuts);

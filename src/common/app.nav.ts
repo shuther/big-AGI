@@ -227,6 +227,9 @@ export const navItems: {
   ],
 
   // External links
+
+//  if (process.env.SUPPORTINVITEDISCORD)
+
   links: [
     // {
     //   type: 'extLink',
@@ -238,17 +241,22 @@ export const navItems: {
       type: 'extLink',
       name: 'Discord',
       icon: DiscordIcon,
-      href: Brand.URIs.SupportInvite,
+      href: Brand.URIs.SupportInvite!== undefined? Brand.URIs.SupportInvite : '',
     },
+
+    /*
     {
       type: 'extLink',
       name: 'GitHub',
       icon: GitHubIcon,
-      href: Brand.URIs.OpenRepo,
+      href: Brand.URIs.OpenRepo!== undefined? Brand.URIs.OpenRepo : '',
     },
+    */
   ],
 
 };
+
+
 
 // apply UI filtering right away - do it here, once, and for all
 navItems.apps = navItems.apps.filter(app => !app._delete || SHOW_ALL_APPS);

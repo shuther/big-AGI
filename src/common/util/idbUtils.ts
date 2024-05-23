@@ -3,8 +3,8 @@ import { del as idbDel, get as idbGet, set as idbSet } from 'idb-keyval';
 
 
 // set to true to enable debugging
-const DEBUG_SCHEDULER = false;
-const USER_LOG_ISSUES = true;
+const DEBUG_SCHEDULER = process.env.DEBUG_SCHEDULER;
+const USER_LOG_ISSUES = process.env.USER_LOG_ISSUES;
 
 
 interface PendingWrite {

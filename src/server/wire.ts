@@ -1,5 +1,5 @@
 /// set this to true to see the tRPC and fetch requests made by the server
-export const SERVER_DEBUG_WIRE = false;
+export const SERVER_DEBUG_WIRE = process.env.SERVER_DEBUG_WIRE;
 
 
 export class ServerFetchError extends Error {
