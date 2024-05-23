@@ -14,6 +14,7 @@ services:
       - "9223:3000"
     env_file:
       - .env
+      - .env.local
       - pg.env
     command: [ "next", "start", "-p", "3000" ]
 #    environment:

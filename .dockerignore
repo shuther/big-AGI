@@ -33,6 +33,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
+.env
 .env*.local
 browserless.env
 pg.env
@@ -44,5 +45,8 @@ pg.env
 *.tsbuildinfo
 next-env.d.ts
 
-# postgreesql
+# postgreesql data folder
 /postgres_data
+
+# VSCode folder
+/.vscode
