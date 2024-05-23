@@ -47,4 +47,8 @@ next-env.d.ts
 
 # Ingore k8s/env-secret.yaml
 ./k8s/env-secret.yaml
+
+# postgreesql
+/postgres_data
+
 *.swp
