@@ -93,7 +93,7 @@ export const env = createEnv({
 
     MAX_CONCURRENT_PANES: z.string(),
 
-    DEBUG_PANES_MANAGER: z.string(),
+    DEBUG_PANES_MANAGER: z.boolean(),
 
     DEBUG_SCHEDULER: z.string(),
     USER_LOG_ISSUES: z.string(),
