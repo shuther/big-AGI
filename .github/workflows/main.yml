@@ -33,8 +33,9 @@ jobs:
     # Step 2: run the sync action
     - name: Sync upstream changes
       id: sync
-#      uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
-      uses: aormsby/Fork-Sync-With-Upstream-action@latest      
+      uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+# latest tag doesn't exist?
+#      uses: aormsby/Fork-Sync-With-Upstream-action@latest      
       with:
         target_sync_branch: main
         # REQUIRED 'target_repo_token' exactly like this!
