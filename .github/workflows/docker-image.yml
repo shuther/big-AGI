@@ -10,12 +10,14 @@
 name: Create and publish Docker images
 
 on:
-  push:
-    branches:
-      - main
-      #- main-stable  # Disabled as the v* tag is used for stable releases
-    tags:
-      - 'v*'  # Trigger on version tags (e.g., v1.7.0)
+#  push:
+#    branches:
+#      - main
+#      #- main-stable  # Disabled as the v* tag is used for stable releases
+#    tags:
+#      - 'v*'  # Trigger on version tags (e.g., v1.7.0)
+
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
