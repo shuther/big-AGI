@@ -21,7 +21,7 @@ jobs:
     # REQUIRED step
     # Step 1: run a standard checkout action, provided by github
     - name: Checkout target repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         # optional: set the branch to checkout,
         # sync action checks out your 'target_sync_branch' anyway
@@ -33,7 +33,8 @@ jobs:
     # Step 2: run the sync action
     - name: Sync upstream changes
       id: sync
-      uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+#      uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+      uses: aormsby/Fork-Sync-With-Upstream-action@latest      
       with:
         target_sync_branch: main
         # REQUIRED 'target_repo_token' exactly like this!
