@@ -58,14 +58,20 @@ services:
 
   postgresl:
     image: postgres:16
-    container_name: pg
-    hostname: pg
+    container_name: chat-pg
+    hostname: chat-pg
     restart: unless-stopped
     # Uncomment the following line to enable query logging
     # Then restart the container.
     # command: ['postgres', '-c', 'log_statement=all']
     env_file:
       - pg.env
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 2048M
+
 #    ports:
 #      - '15432:5432'
 

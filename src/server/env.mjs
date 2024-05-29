@@ -133,6 +133,7 @@ export const env = createEnv({
     NEXT_PUBLIC_PRIVACYPOLICY: z.string().url(),
     NEXT_PUBLIC_TITLEAPP: z.string(),
     NEXT_PUBLIC_TWITTERSITE: z.string(),
+    NEXT_PUBLIC_SHOW_PURPOSE_FINDER: z.string().optional(),
 
   },
 
