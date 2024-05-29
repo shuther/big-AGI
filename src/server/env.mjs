@@ -116,6 +116,7 @@ export const env = createEnv({
     NEXT_PUBLIC_PRIVACYPOLICY: z.string().url(),
     NEXT_PUBLIC_TITLEAPP: z.string(),
     NEXT_PUBLIC_TWITTERSITE: z.string(),
+    NEXT_PUBLIC_SHOW_PURPOSE_FINDER: z.string().optional(),
 
   },
 
@@ -127,9 +128,20 @@ export const env = createEnv({
   // matches user expectations - see https://github.com/enricoros/big-AGI/issues/279
   emptyStringAsUndefined: true,
 
-  // with Noext.JS >= 13.4.4 we'd only need to destructure client variables
+  // with Next.JS >= 13.4.4 we'd only need to destructure client variables
+
   experimental__runtimeEnv: {
     NEXT_PUBLIC_GA4_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID,
     NEXT_PUBLIC_PLANTUML_SERVER_URL: process.env.NEXT_PUBLIC_PLANTUML_SERVER_URL,
+    NEXT_PUBLIC_URLNAME: process.env.NEXT_PUBLIC_URLNAME,
+    NEXT_PUBLIC_CARDIMAGE: process.env.NEXT_PUBLIC_CARDIMAGE,
+    NEXT_PUBLIC_OPENREPO: process.env.NEXT_PUBLIC_OPENREPO,
+    NEXT_PUBLIC_OPENPROJECT: process.env.NEXT_PUBLIC_OPENPROJECT,
+    NEXT_PUBLIC_SUPPORTINVITEDISCORD: process.env.NEXT_PUBLIC_SUPPORTINVITEDISCORD,
+    NEXT_PUBLIC_PRIVACYPOLICY: process.env.NEXT_PUBLIC_PRIVACYPOLICY,
+    NEXT_PUBLIC_TITLEAPP: process.env.NEXT_PUBLIC_TITLEAPP,
+    NEXT_PUBLIC_TWITTERSITE: process.env.NEXT_PUBLIC_TWITTERSITE,
+    NEXT_PUBLIC_SHOW_PURPOSE_FINDER: process.env.NEXT_PUBLIC_SHOW_PURPOSE_FINDER,
   },
+
 });

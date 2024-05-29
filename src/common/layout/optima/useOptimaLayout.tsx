@@ -6,7 +6,7 @@ import { GlobalShortcutItem, useGlobalShortcuts } from '~/common/components/useG
 
 
 const DEBUG_OPTIMA_LAYOUT_PLUGGING = false;
-
+const allowAIModelSelection = true;
 
 export const PreferencesTab = {
   None: 0,
@@ -100,7 +100,7 @@ export function OptimaLayoutProvider(props: { children: React.ReactNode }) {
     closePreferences: () => setState(state => ({ ...state, showPreferencesTab: 0 })),
 
     //Block
-    openModelsSetup: () => setState(state => ({ ...state, showModelsSetup: false })),
+    openModelsSetup: () => setState(state => ({ ...state, showModelsSetup: allowAIModelSelection })),
     closeModelsSetup: () => setState(state => ({ ...state, showModelsSetup: false })),
 
     openLlmOptions: (id: DLLMId) => setState(state => ({ ...state, showLlmOptions: id })),
@@ -117,7 +117,7 @@ export function OptimaLayoutProvider(props: { children: React.ReactNode }) {
   // global shortcuts for Optima
   const shortcuts = React.useMemo((): GlobalShortcutItem[] => [
     ['?', true, true, false, actions.openShortcuts],
-  //  ['m', true, true, false, actions.openModelsSetup],
+    ['m', true, true, false, allowAIModelSelection? actions.openModelsSetup: (() => void 0)],
     ['p', true, true, false, actions.openPreferencesTab],
   ], [actions]);
   useGlobalShortcuts(shortcuts);

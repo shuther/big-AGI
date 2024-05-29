@@ -27,6 +27,7 @@ ENV NEXT_PUBLIC_GA4_MEASUREMENT_ID=${NEXT_PUBLIC_GA4_MEASUREMENT_ID}
 # Copy development deps and source
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+COPY .env.build .env.production
 
 # Build the application
 ENV NODE_ENV production

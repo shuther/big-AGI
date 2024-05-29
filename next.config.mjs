@@ -4,7 +4,7 @@ const buildType =
     : process.env.BIG_AGI_BUILD === 'static' ? 'export'
       : undefined;
 
-buildType && console.log(`   🧠 big-AGI: building for ${buildType}...\n`);
+buildType && console.log(`   🧠${NEXT_PUBLIC_TITLEAPP}: building for ${buildType}...\n`);
 
 /** @type {import('next').NextConfig} */
 let nextConfig = {
@@ -24,7 +24,9 @@ let nextConfig = {
 
   // [puppeteer] https://github.com/puppeteer/puppeteer/issues/11052
   experimental: {
-    serverComponentsExternalPackages: ['puppeteer-core'],
+    serverComponentsExternalPackages: ['puppeteer-core',
+ // To be setup using https://github.com/vercel/next.js/discussions/46987
+    'sequelize', 'pino', 'pino-pretty'],
   },
 
   webpack: (config, _options) => {

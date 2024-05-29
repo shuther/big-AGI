@@ -81,11 +81,34 @@ export interface NavItemExtLink extends ItemBase {
 //   action: () => void,
 // }
 
+let linksDiscord: NavItemExtLink | undefined = undefined;
+let LinksItems:NavItemExtLink[] = [];
+
+if (Brand.URIs.SupportInvite) {
+  linksDiscord = {
+    type: 'extLink',
+    name: 'Discord',
+    icon: DiscordIcon,
+    href: Brand.URIs.SupportInvite!== undefined? Brand.URIs.SupportInvite : '',
+  };
+  LinksItems.push(linksDiscord);
+}
+
+if (Brand.URIs.OpenRepo) {
+    LinksItems.push(
+    {
+      type: 'extLink',
+      name: 'GitHub',
+      icon: GitHubIcon,
+      href: Brand.URIs.OpenRepo!== undefined? Brand.URIs.OpenRepo : '',
+    })
+  ;
+}
 
 export const navItems: {
   apps: NavItemApp[],
   modals: NavItemModal[],
-  links: NavItemExtLink[],
+  links: NavItemExtLink[] | undefined,
 } = {
 
   // User-chosen apps
@@ -230,29 +253,7 @@ export const navItems: {
 
 //  if (process.env.SUPPORTINVITEDISCORD)
 
-  links: [
-    // {
-    //   type: 'extLink',
-    //   name: 'X',
-    //   icon: TwitterIcon,
-    //   href: 'https://twitter.com',
-    // },
-    {
-      type: 'extLink',
-      name: 'Discord',
-      icon: DiscordIcon,
-      href: Brand.URIs.SupportInvite!== undefined? Brand.URIs.SupportInvite : '',
-    },
-
-    /*
-    {
-      type: 'extLink',
-      name: 'GitHub',
-      icon: GitHubIcon,
-      href: Brand.URIs.OpenRepo!== undefined? Brand.URIs.OpenRepo : '',
-    },
-    */
-  ],
+  links: LinksItems,
 
 };
 

@@ -11,14 +11,14 @@ const shortcutsMd = platformAwareKeystrokes(`
 
 | Shortcut            | Description                                     |
 |---------------------|-------------------------------------------------|
-| **Edit**            |                                                 | 
+| **Edit**            |                                                 |
 | Shift + Enter       | Newline                                         |
 | Alt + Enter         | Append (no response)                            |
 | Ctrl + Shift + B    | **Beam** last message                           |
 | Ctrl + Shift + R    | **Regenerate** last message                     |
 | Ctrl + Shift + V    | Attach clipboard (better than Ctrl + V)         |
 | Ctrl + M            | Microphone (voice typing)                       |
-| **Chats**           |                                                 | 
+| **Chats**           |                                                 |
 | Ctrl + O            | Open Chat File ...                              |
 | Ctrl + S            | Save Chat File ...                              |
 | Ctrl + Alt + N      | **New** chat                                    |
@@ -29,14 +29,13 @@ const shortcutsMd = platformAwareKeystrokes(`
 | Ctrl + Alt + Right  | **Next** chat (in history)                      |
 | **Settings**        |                                                 |
 | Ctrl + Shift + P    | ⚙️ Preferences                                  |
-| Ctrl + Shift + M    | 🧠 Models                                       |
 | Ctrl + Shift + O    | 💬 Options (current Chat Model)                 |
 | Ctrl + Shift + +    | Increase Text Size                              |
 | Ctrl + Shift + -    | Decrease Text Size                              |
 | Ctrl + Shift + ?    | Shortcuts                                       |
 
 `).trim();
-
+// | Ctrl + Shift + M    | 🧠 Models                                       |
 
 export function ShortcutsModal(props: { onClose: () => void }) {
 

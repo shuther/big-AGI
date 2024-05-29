@@ -115,19 +115,25 @@ export function DesktopNav(props: { component: React.ElementType, currentApp?: N
 
   // External link items
   const navExtLinkItems = React.useMemo(() => {
-    return navItems.links.map((item, index) =>
-      <BringTheLove
-        key={'nav-ext-' + item.name}
-        asIcon
-        text={item.name}
-        icon={item.icon}
-        link={item.href}
-        sx={{
-          p: 1,
-          mb: index > 0 ? 1 : 0,
-        }}
-      />,
-    );
+    if (navItems!== undefined && navItems.links!== undefined) {
+      return navItems.links.map((item, index) =>
+        <BringTheLove
+          key={'nav-ext-' + item.name}
+          asIcon
+          text={item.name}
+          icon={item.icon}
+          link={item.href}
+          sx={{
+            p: 1,
+            mb: index > 0 ? 1 : 0,
+          }}
+        />,
+      );
+    } else
+    {
+      return [];
+    }
+
   }, []);
 
 

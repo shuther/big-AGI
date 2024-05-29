@@ -43,7 +43,7 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
         <meta property='twitter:title' content={Brand.Title.Common} />
         <meta property='twitter:description' content={Brand.Meta.Description} />
         {Brand.URIs.CardImage && <meta property='twitter:image' content={Brand.URIs.CardImage} />}
-        <meta name='twitter:site' content={Brand.Meta.TwitterSite} />
+        {Brand.Meta.TwitterSite && <meta name='twitter:site' content={Brand.Meta.TwitterSite} />}
         <meta name='twitter:card' content='summary_large_image' />
 
         {/* Style Sheets (injected and server-side) */}

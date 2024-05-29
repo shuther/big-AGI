@@ -1,6 +1,10 @@
 /// set this to true to see the tRPC and fetch requests made by the server
-export const SERVER_DEBUG_WIRE = process.env.SERVER_DEBUG_WIRE;
-
+export const SERVER_DEBUG_WIRE:boolean = Boolean(process.env.SERVER_DEBUG_WIRE!) || false;
+if (SERVER_DEBUG_WIRE) {
+  console.log('SERVER_DEBUG_WIRE set to true');
+} else {
+  console.log('SERVER_DEBUG_WIRE set to false');
+}
 
 export class ServerFetchError extends Error {
   public statusCode: number;

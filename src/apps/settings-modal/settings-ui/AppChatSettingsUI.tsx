@@ -17,8 +17,7 @@ import { SettingContentScaling } from './SettingContentScaling';
 
 
 // configuration
-const SHOW_PURPOSE_FINDER = false;
-
+const SHOW_PURPOSE_FINDER:boolean = Boolean(process.env.NEXT_PUBLIC_SHOW_PURPOSE_FINDER!) || false;
 
 const ModelsSetupButton = () => {
 

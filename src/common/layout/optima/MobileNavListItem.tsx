@@ -75,7 +75,7 @@ export function MobileNavListItem(props: { variant?: VariantProp, currentApp?: N
             gap: 0.5,
           }}
         >
-          {navItems.links.map(item =>
+          {navItems!.links!.map(item =>
             <BringTheLove key={'love-' + item.name} text={item.name} icon={item.icon} link={item.href} />,
           )}
         </ButtonGroup>
