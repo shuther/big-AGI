@@ -44,3 +44,7 @@ pg.env
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+postgres_data/
+.vscode/
+.github/
