@@ -44,9 +44,3 @@ pg.env
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# postgreesql data folder
-/postgres_data
-
-# VSCode folder
-/.vscode

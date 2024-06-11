@@ -108,16 +108,6 @@ export const env = createEnv({
     // Frontend: server to use for PlantUML rendering
     NEXT_PUBLIC_PLANTUML_SERVER_URL: z.string().url().optional(),
 
-    NEXT_PUBLIC_URLNAME: z.string().url().optional(),
-    NEXT_PUBLIC_CARDIMAGE: z.string().url().optional(),
-    NEXT_PUBLIC_OPENREPO: z.string().url().optional(),
-    NEXT_PUBLIC_OPENPROJECT: z.string().url(),
-    NEXT_PUBLIC_SUPPORTINVITEDISCORD: z.string().url().optional(),
-    NEXT_PUBLIC_PRIVACYPOLICY: z.string().url(),
-    NEXT_PUBLIC_TITLEAPP: z.string(),
-    NEXT_PUBLIC_TWITTERSITE: z.string(),
-    NEXT_PUBLIC_SHOW_PURPOSE_FINDER: z.string().optional(),
-
   },
 
   onValidationError: error => {
