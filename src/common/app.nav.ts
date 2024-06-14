@@ -259,6 +259,8 @@ export const navItems: {
 
 
 
+
+
 // apply UI filtering right away - do it here, once, and for all
 navItems.apps = navItems.apps.filter(app => !app._delete || SHOW_ALL_APPS);
 

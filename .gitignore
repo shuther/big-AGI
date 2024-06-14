@@ -44,8 +44,3 @@ next-env.d.ts
 
 # other
 .idea/
-
-# postgreesql
-/postgres_data
-.vscode
-.vscode/launch.json
