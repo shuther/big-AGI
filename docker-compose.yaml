@@ -44,6 +44,9 @@ services:
     env_file:
       - browserless.env
     restart: always
+# only because used by other dockers suchas crewai
+    extra_hosts:
+      - host.docker.internal:host-gateway
     ports:
       - "9222:3000"  # Map host's port 9222 to container's port 3000
 #    environment:
