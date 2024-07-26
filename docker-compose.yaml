@@ -6,10 +6,7 @@ version: '3.9'
 
 services:
   big-agi:
-#    image: ghcr.io/enricoros/big-agi:latest
-    build: .
-    image: big-agi
-
+    image: ghcr.io/enricoros/big-agi:latest
     ports:
       - "9223:3000"
     env_file:

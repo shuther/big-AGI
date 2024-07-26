@@ -119,7 +119,8 @@ export function OptimaLayoutProvider(props: { children: React.ReactNode }) {
   const shortcuts = React.useMemo((): GlobalShortcutDefinition[] => [
     [isMacUser ? '/' : '?', true, true, false, actions.openShortcuts],
     [',', true, false, false, actions.openPreferencesTab],
-    ['m', true, true, false, actions.openModelsSetup],
+
+ //   ['m', true, true, false, actions.openModelsSetup],
   ], [actions]);
   useGlobalShortcuts(shortcuts);
 

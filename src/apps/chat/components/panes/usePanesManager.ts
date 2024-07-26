@@ -14,7 +14,7 @@ const MAX_HISTORY_LENGTH:string = process.env.MAX_HISTORY_LENGTH || '10';
 const MAX_CONCURRENT_PANES:number = Number(process.env.MAX_CONCURRENT_PANES) || 4;
 
 // change to true to enable verbose console logging
-const DEBUG_PANES_MANAGER:string = process.env.DEBUG_PANES_MANAGER || 'false';
+const DEBUG_PANES_MANAGER:boolean = Boolean(process.env.DEBUG_PANES_MANAGER) || false;
 
 
 interface ChatPane {

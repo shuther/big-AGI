@@ -50,5 +50,7 @@ next-env.d.ts
 
 # postgreesql
 /postgres_data
+.vscode
+.vscode/launch.json
 
 *.swp
