@@ -1,8 +1,8 @@
 name: 'Upstream Sync'
 # https://github.com/aormsby/Fork-Sync-With-Upstream-action
 on:
-  schedule:
-    - cron:  '0 7 * * *'
+#  schedule:
+#    - cron:  '0 7 * * *'
      # scheduled at 07:00 every Monday and Thursday
 
 #    - cron:  '0 19 * * *'
